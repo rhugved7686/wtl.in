@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WTL Tourism</title>
+    <style>
+        /* General styles */
+        body {
+            margin-top: -70px;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            position: relative;
+            flex-direction: column;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        /* Card with Text (shifted downwards) */
+        .text-card {
+            position: absolute;
+            padding: 0px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            text-align: center;
+            bottom: 10%;
+        }
+
+        .text-card p {
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            transition: transform 0.5s ease;
+            display: inline-block;
+        }
+
+        p:hover {
+            color: chartreuse;
+            transform: scale(1);
+        }
+
+        /* Journey Details Section */
+        .journey-cards-container {
+            position: absolute;
+            top: 95%;
+            width: 100%;
+            padding: 0px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 5px;
+            overflow-x: auto;
+        }
+
+        .journey-card {
+            width: 350px;
+            background-color: bisque;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .journey-card img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .journey-card h3 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: black;
+        }
+
+        .journey-card h3:hover {
+            color: red;
+            transform: scale(1);
+        }
+
+        .journey-card p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        /* Media Query for Tablet and Mobile */
+        @media (max-width: 768px) {
+            .journey-cards-container {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+
+            .journey-card {
+                width: 90%;
+            }
+
+            .journey-card img {
+                height: 300px;
+            }
+
+            .text-card {
+                top: 80%;
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .journey-card {
+                width: 100%;
+            }
+
+            .journey-card img {
+                height: 150px;
+            }
+
+            /* Shift the text card further down for mobile */
+            .text-card {
+                top: 38%;
+                max-width: 95%;
+            }
+        }
+
+        /* For Heading Text */
+        b p {
+            text-align: center;
+            font-size: 40px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <b><p>The Important Snan Dates of Kumbh Mela at Prayagraj in 2025</p></b>
+    <div style="width: 100%;">
+        <img src="images/kumbh.jpg" alt="Snan" width="100%" height="350px">
+    </div>
+
+    <!-- Card with Text (shifted downwards) -->
+    <div class="text-card">
+        <p>"महाकुंभ की पावन यात्रा का आनंद लें, अपनी तारीख अभी बुक करें।</p>
+    </div>
+
+    <!-- Journey Details Section (displaying cards in a row) -->
+    <div class="journey-cards-container">
+        
+        <!-- Journey Card 1 -->
+        <div class="journey-card">
+            <img src="images/1.jpg" alt="2nd Trip">
+            <h3>1st Trip: 20th January 2025</h3>
+            <h3> (Slot Full)</h3>
+            <p>The first trip is now fully booked.</p>
+        </div>
+
+        <!-- Journey Card 2 -->
+        <div class="journey-card">
+            <img src="images/2.jpg" alt="2nd Trip">
+            <h3>2nd Trip: 27th January - 29th January (Prayagraj) | 31st January (Return)</h3>
+            <br></br>
+            <p>Join us for a trip to Prayagraj and return on 31st January.</p>
+        </div>
+
+        <!-- Journey Card 3 -->
+        <div class="journey-card">
+            <img src="images/33.jpg" alt="3rd Trip">
+            <h3>3rd Trip: 1st February - 3rd February (Prayagraj) | 5th February (Return)</h3>
+            <p>Travel to Prayagraj in February and return on the 5th.</p>
+        </div>
+
+        <!-- Journey Card 4 -->
+        <div class="journey-card">
+            <img src="images/4.jpg" alt="4th Trip">
+            <h3>4th Trip: 10th February - 12th February (Prayagraj) | 14th February (Return)</h3>
+            <p>Experience the Kumbh Mela on the 4th trip.</p>
+        </div>
+
+        <!-- Journey Card 5 -->
+        <div class="journey-card">
+            <img src="images/Mkumbh.webp" alt="5th Trip">
+            <h3>5th Trip: 21st February - 23rd February (Prayagraj) | 25th February (Return)</h3>
+            <p>The final trip to Prayagraj in February.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
