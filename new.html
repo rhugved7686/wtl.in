@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashtavinayak Tour</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0px;
+        padding: 0px;
+        background-size: cover;
+        color: #333;
+        background-color: white;
+      }
+      header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        background-color:white;
+
+      }
+      header img {
+        width: 120px;
+      }
+      header h1 {
+        font-size: 2.5rem;
+        color: red;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        margin-left: 20%;
+        text-align: center;
+      }
+
+      .first-img {
+        position: relative;
+        width: 100%;
+        height: 110vh;
+        overflow: hidden;
+      }
+
+      .first-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+       .booking-form {
+        position: absolute;
+        top: 1%;
+        bottom: 1%;
+        right: 5%;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 350px;
+        z-index: 10;
+      }
+
+      .booking-form h3 {
+        top:1%;
+        bottom: 5%;
+        padding: 1px;
+        text-align: center;
+        color: darkblue;
+        margin-bottom: 10px;
+      }
+      .booking-form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: black;
+      }
+      .booking-form input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      .booking-form button {
+        width: 100%;
+        padding: 10px;
+        background-color: darkblue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .booking-form button:hover {
+        background-color: #0056b3;
+      }
+
+
+
+
+      .container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .places {
+        margin-top: 5%;
+      }
+      .places h2 {
+        margin-bottom: 20px;
+        color: black;
+        background-color:bisque(255, 255, 255, 0.8);
+        /* display: inline-block; */
+        /* padding: 10px 20px; */
+        border-radius: 5px;
+        font-weight: 900;
+      }
+      .places h2:hover {
+        color: darkblue;
+        transform: scale(1.2);
+      }
+      .circle-container {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 50px 0;
+      }
+      .line {
+        position: absolute;
+        height: 5px;
+        background-color: #ff5722;
+        width: 90%;
+        top: 50%;
+        left: 5%;
+        z-index: 0;
+      }
+      .circle {
+        width: 130px;
+        height: 140px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid red; 
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        background-color: white;
+        transition: transform 0.3s ease;
+      }
+      .circle img {
+        width: 60%;
+        height: 70%;
+        object-fit: cover;
+      }
+      .circle:hover {
+        transform: scale(1.2);
+      }
+      .tooltip {
+        position: absolute;
+        /* bottom: -60px; */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: red;
+        color: white;
+        padding: 5px;
+        border-radius: 45px;
+        font-size: 0.6rem;
+        opacity: 1;
+        /* transition: opacity 0.3s ease; */
+        pointer-events: none;
+        white-space: nowrap;
+      }
+      .circle:hover .tooltip {
+        opacity: 1;
+      }
+   
+      .book-tour{
+        color: darkblue;
+        align-items: center;
+        margin-left: 15%;
+      }
+      .container2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .section {
+        display: flex;
+        align-items: center;
+        top:50%;
+        margin-bottom: 40px;
+        margin-right: 10px;
+      }
+      .section img {
+        width: 400px;
+        height: 350px;
+        margin: 0 20px;
+      }
+      .info {
+        max-width: 600px;
+      }
+      .info h3 {
+        text-align: center;
+        margin: 0;
+        color: #d35400;
+        font-weight: bold;
+      }
+      .info h3:hover {
+        color: blue;
+        transform: translate(00.9rem);
+      }
+      .info p {
+        line-height: 2.1;
+        padding: 20px;
+        text-align: justify;
+      }
+      .place-name {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #333;
+  margin-top: 5px;
+}
+.circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+      @media (max-width: 768px) {
+        .booking-form {
+          left: 10%;
+          width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+        <img src="./images/wtl-logo2.png" style="height: 90px; width: 150px;">
+        <h1>अष्टविनायक यात्रा</h1>
+      <!-- <h1>Ashtavinayak Tour</h1> -->
+    </header>
+
+    <div class="first-img">
+      <img
+        src="./images/Background_img.jpg"
+        alt="Ganesha Logo"
+      />
+      <div class="booking-form">
+        <h3>Book Your Tour</h3>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required />
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" required />
+            <label for="departure">Date of Departure:</label>
+                <input type="date" id="departure" name="departure" required>
+                <label for="returnDate">Return Date:</label>
+                <input type="date" id="returnDate" name="returnDate" required>
+                <label for="pickupLocation">Pickup Location:</label>
+                <input type="text" id="pickupLocation" name="pickupLocation" required>
+
+                <label for="people">No. of People:</label>
+                <input type="number" id="people" name="people" required>
+                <label for="package">Package You Are Interested In:</label>
+                <select id="package" name="package" required>
+                    <option value="AC Sleeper">AC Sleeper</option>
+                    <option value="Non-AC Sleeper">Non-AC Sleeper</option>
+                    <option value="AC Seater">AC Seater</option>
+                    <option value="Non-AC Seater">Non-AC Seater</option>
+                </select>
+                <button type="button" onclick="submitForm()">Submit</button>
+        </div>
+      </div>
+      
+
+      <div class="container">
+        <div class="places">
+          <h2>Explore All 8 Spiritual Places</h2>
+          <div class="circle-container">
+            <div class="line"></div>
+            <div class="circle">
+              <img src="./images/ImgA.jpeg" alt="Place 1" />
+              <!-- <div class="tooltip">Shri Mayureshwar</div> -->
+              <p class="place-name">Shri Mayureshwar</p>
+            </div>
+            <div class="circle">
+              <img src="./images/imgB.jpeg" alt="Place 2" />
+              <!-- <div class="tooltip">Shri Siddhivinayak</div> -->
+              <p class="place-name">Shri Siddhivinayak</p>
+            </div>
+            <div class="circle">
+              <img src="./images/imgC.jpeg" alt="Place 3" />
+              <!-- <div class="tooltip">Shri Ballaleshwar</div> -->
+              <p class="place-name">Shri Ballaleshwar</p>
+            </div>
+            <div class="circle">
+              <img src="./images/imgD.jpeg" alt="Place 4" />
+              <!-- <div class="tooltip">Shri Varadvinayak</div> -->
+              <p class="place-name">Shri Varadvinayak</p>
+            </div>
+            <div class="circle">
+              <img src="./images/imgE.jpeg" alt="Place 5" />
+              <!-- <div class="tooltip">Shri Chintamani</div> -->
+              <p class="place-name">Shri Chintamani</p>
+            </div>
+            <div class="circle">
+              <img src="./images/imgF.jpeg" alt="Place 6" />
+              <!-- <div class="tooltip">Shri Girijatmaj</div> -->
+              <p class="place-name">Shri Girijatmaj</p>
+            </div>
+            <div class="circle">
+              <img src="./images/imgG.jpeg" alt="Place 7" />
+              <!-- <div class="tooltip">Shri Vigneshwar</div> -->
+              <p class="place-name">Shri Vigneshwar</p>
+            </div>
+            <div class="circle">
+              <img src="./images/imgH.jpeg" alt="Place 8" />
+              <!-- <div class="tooltip">Shri Mahaganpati</div> -->
+              <p class="place-name">Shri Mahaganpati</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    <div class ="book-tour">
+      <h1>"अष्टविनायक यात्रा: श्रद्धा के आठ चरण, गणपति के संग पावन सफर!"</h1>
+     </div> 
+
+    <div>
+      <div class="container2">
+        <!-- First Section -->
+        <div class="section">
+          <img
+            src="./images/ashtavinayak-morgaon-mayureshwar-ganpati-temple.jpeg"
+            alt="Shri Mayureshwar"
+          />
+          <div class="info">
+            <h3>Shri Mayureshwar - Morgaon</h3>
+            <p>
+              Shri Mayureshwar Ganpati is located in Morgaon and is considered
+              the starting point of the Ashtavinayak pilgrimage. The idol is
+              believed to be self-manifested and is adorned with a cobra hood.
+              It represents prosperity and wisdom. The temple is surrounded by a
+              beautiful courtyard and intricate carvings.
+            </p>
+          </div>
+        </div>
+        <div class="section">
+          <div class="info">
+            <h3>Shri Siddhivinayak - Siddhatek</h3>
+            <p>
+              Shri Siddhivinayak Ganpati is situated at Siddhatek and is
+              believed to grant success to devotees' endeavors. The idol is
+              unique, with the trunk pointing towards the right. It is set on a
+              hillock with a scenic river nearby. It is said that Lord Vishnu
+              worshipped this Ganpati to defeat the demons Madhu and Kaitabha.
+            </p>
+          </div>
+          <img
+            src="./images/Shri Siddhivinayak - Siddhatek.webp"
+            alt="Shri Siddhivinayak"
+          />
+        </div>
+
+        <!-- Second Section -->
+        <div class="section">
+          <img
+            src="./images/Ballaleshwar-Pali-Ganpati-Temple.jpg"
+            alt="Shri Ballaleshwar"
+          />
+          <div class="info">
+            <h3>Shri Ballaleshwar - Pali</h3>
+            <p>
+              Shri Ballaleshwar Ganpati is the only temple named after a
+              devotee, Ballal. Located in Pali, it is known for its historic
+              significance and serene environment. The temple faces east,
+              ensuring the rays of the sun illuminate the idol during sunrise.
+            </p>
+          </div>
+        </div>
+        <div class="section">
+          <div class="info">
+            <h3>Shri Varadvinayak - Mahad</h3>
+            <p>
+              Shri Varadvinayak Ganpati is located in Mahad and is believed to
+              grant boons and wishes. The idol was found in a nearby lake and
+              enshrined in the temple. It is known for its simplicity and
+              beauty. Devotees are allowed to directly touch and worship the
+              idol, which is rare in Hindu temples.
+            </p>
+          </div>
+          <img
+            src="./images/varadavinayak-temple-7.jpg"
+            alt="Shri Varadvinayak"
+          />
+        </div>
+
+        <!-- Repeat for remaining Ashtavinayak Ganpatis -->
+        <!-- Add additional sections here for Chintamani, Girijatmaj, Vigneshwar, Mahaganpati -->
+
+        <div class="section">
+          <img
+            src="./images/chintamani-temple-theur-3.jpg"
+            alt="Shri Varadvinayak"
+          />
+          <div class="info">
+            <h3>Shri Chintamani - Theur</h3>
+            <p>
+              Shri Chintamani Temple in Theur, Maharashtra, is one of the
+              revered Ashtavinayak temples dedicated to Lord Ganesha. The temple
+              is named after the Chintamani jewel, symbolizing the removal of
+              worries and granting peace of mind. Lord Ganesha here is believed
+              to have retrieved the jewel for Sage Kapila and restored his
+              tranquility. The temple has a rich Peshwa-era history, with
+              Madhavrao Peshwa seeking divine blessings here. The idol is
+              adorned with precious ornaments, creating a serene and spiritual
+              ambiance. Devotees visit to seek Lord Ganesha's blessings for
+              mental peace and wisdom.
+            </p>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="info">
+            <h3>Shri Girijatmaj - Lenyadri</h3>
+            <p>
+              Shri Girijatmaj Temple, located in the caves of Lenyadri,
+              Maharashtra, is dedicated to Lord Ganesha, worshipped as the son
+              of Goddess Parvati (Girija). This unique Ashtavinayak temple is
+              set within ancient Buddhist caves, adding historical significance.
+              Devotees climb 307 steps to reach the serene hilltop temple. It
+              symbolizes the divine bond between mother and child, attracting
+              pilgrims seeking blessings for family and strength.
+            </p>
+          </div>
+          <img
+            src="./images/Shri Girijatmaj - Lenyadri.jpg"
+            alt="Shri Varadvinayak"
+          />
+        </div>
+
+        <div class="section">
+          <img
+            src="./images/shri vighneshwar vinayak temple.png"
+            alt="Shri Varadvinayak"
+          />
+          <div class="info">
+            <h3>Shri Vigneshwar - Ozar</h3>
+            <p>
+              Shri Vigneshwar Temple, located in Ozar, Maharashtra, is dedicated
+              to Lord Ganesha as the remover of obstacles (Vighnaharta). The
+              temple is famous for its exquisite stone carvings, gold-plated
+              dome, and a deepmoat around it. Legend states that Lord Ganesha
+              defeated the demon Vighnasur here, symbolizing victory over
+              challenges. The temple offers a serene and sacred atmosphere,
+              attracting devotees seeking success and protection. It is one of
+              the most prominent Ashtavinayak temples.
+            </p>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="info">
+            <h3> Shri Mahaganpati - Ranjangaon</h3>
+            <p>
+                Shri Mahaganpati Temple in Ranjangaon is dedicated to Lord Ganesha in his supreme and powerful form. It is believed that Lord Shiva worshipped Ganesha here before defeating the demon Tripurasura. The temple features Peshwa-era architecture and an idol symbolizing strength and victory. Devotees visit for blessings of success, prosperity, and removal of obstacles.
+            </p>
+          </div>
+          <img
+            src="./images/ranjangaon-ganpati-temple.jpg"
+            alt="Shri Varadvinayak"
+          />
+        </div>
+      </div>
+    </div>
+     
+
+    <script>
+      function submitForm() {
+        const name = document.getElementById("name").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+
+        if (!name || !phone) {
+          alert("Please fill in all fields.");
+          return;
+        }
+
+        // Redirect to WhatsApp with pre-filled message
+        const message = `Hello, I would like to book an Ashtavinayak tour.\nName: ${name}\nPhone: ${phone}`;
+        const whatsappURL = `https://wa.me/91xxxxxxxxxx?text=${encodeURIComponent(
+          message
+        )}`;
+        window.location.href = whatsappURL;
+      }
+    </script>
+
+      
+
+    
+  </body>
+</html>

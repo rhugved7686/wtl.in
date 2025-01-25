@@ -153,6 +153,30 @@
     object-fit: cover;
 }
 
+.floating-div {
+            position: fixed;
+            top: 7px;
+            right: 10px;
+            background-color: red;
+            /* border: 2px solid #6200ea; */
+            padding: 5px 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        .floating-div button {
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 60px;
+        }
+        .floating-div button:hover {
+            background-color: #3700b3;
+        }
+
 
 
         .offer-text {
@@ -513,6 +537,10 @@
     <a href="tel:+9130030054" class="call-button" title="Call us">
         <img src="https://png.pngtree.com/png-clipart/20230320/original/pngtree-circle-phone-call-icon-in-black-color-png-image_8997757.png" alt="Call" />
     </a>
+</div>
+<div class="floating-div">
+    <p><strong>Book the Ashtavinayak Tour!</strong></p>
+    <button onclick="location.href='app.html'">Book Now</button>
 </div>
 
 
